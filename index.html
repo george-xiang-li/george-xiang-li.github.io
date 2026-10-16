@@ -1,147 +1,90 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="George Xiang Li — student maker exploring AI, robotics, engineering, and real-world problem solving." />
-  <title>George Xiang Li</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="#top">GXL</a>
-    <nav aria-label="Primary">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#builds">Builds</a>
-      <a href="#journal">Journal</a>
-    </nav>
-  </header>
-
-  <main id="top">
-    <section class="hero section-shell">
-      <p class="eyebrow">GEORGE XIANG LI</p>
-      <h1>Technology<br />Improves Life.</h1>
-      <p class="hero-copy">
-        I explore how AI, robotics, and engineering can solve everyday problems —
-        by building, testing, debugging, and improving real things.
-      </p>
+---
+layout: default
+title:
+---
+<section id="top" class="hero section-shell">
+  <div class="hero-grid">
+    <div class="hero-copy-wrap">
+      <p class="eyebrow">{{ site.data.site.role }}</p>
+      <h1>{{ site.data.site.hero_heading }}</h1>
+      <p class="hero-copy">{{ site.data.site.hero_copy }}</p>
       <div class="hero-actions">
-        <a class="button primary" href="#projects">View projects</a>
-        <a class="button secondary" href="#about">About George</a>
+        <a class="button primary" href="#projects">Explore projects</a>
+        <a class="button secondary" href="#process">See how I build</a>
       </div>
-      <div class="hero-meta" aria-label="Focus areas">
-        <span>AI</span><span>Robotics</span><span>Engineering</span><span>Maker</span>
-      </div>
-    </section>
-
-    <section id="about" class="section-shell split-section">
-      <div>
-        <p class="section-kicker">ABOUT</p>
-        <h2>Curious about how things work — and how they can work better.</h2>
-      </div>
-      <div class="prose">
-        <p>
-          George is a student maker interested in artificial intelligence, robotics,
-          engineering, and human-centered problem solving. His projects begin with a
-          practical question: what can be improved, simplified, or made more useful?
-        </p>
-        <p>
-          This site documents not only finished projects, but also the process behind them:
-          ideas, sketches, code, prototypes, failed attempts, debugging, testing, and iteration.
-        </p>
-      </div>
-    </section>
-
-    <section id="projects" class="section-shell">
-      <div class="section-heading-row">
-        <div>
-          <p class="section-kicker">SELECTED PROJECTS</p>
-          <h2>Built from real problems.</h2>
-        </div>
-        <p class="section-note">Growing archive · 2024—present</p>
-      </div>
-
-      <div class="project-grid">
-        <article class="project-card featured">
-          <div class="project-index">01</div>
-          <div class="project-card-body">
-            <p class="project-type">VOICE INTERACTION · MECHATRONICS</p>
-            <h3>Voice-Controlled Smart Toolbox</h3>
-            <p>
-              A voice-controlled storage system designed to help users locate and retrieve
-              everyday items more efficiently. The prototype combines an UNO board, voice
-              recognition, servo control, compartmentalized storage, and RGB status indicators.
-            </p>
-            <div class="tags"><span>UNO</span><span>Voice Recognition</span><span>Servo</span><span>Human-Centered Design</span></div>
-            <a class="text-link" href="projects/voice-toolbox.html">Explore the build →</a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-index">02</div>
-          <div class="project-card-body">
-            <p class="project-type">SMART ENVIRONMENT · PROTOTYPING</p>
-            <h3>Layered Disinfection Waste Bin</h3>
-            <p>
-              An early engineering project exploring layered storage, automated disinfection,
-              reminders, and a cleaner everyday waste-management experience. Future iterations
-              will focus on reliability, sensing, testing, and measurable performance.
-            </p>
-            <div class="tags"><span>3D Printing</span><span>Sensors</span><span>Prototyping</span><span>Iteration</span></div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-index">03</div>
-          <div class="project-card-body">
-            <p class="project-type">AI · SIMULATION · COMMUNICATION</p>
-            <h3>AI Anti-Drug Action</h3>
-            <p>
-              A digital drug-enforcement simulation project developed for an international AI
-              youth innovation competition, combining technology, scenario design, and English presentation.
-            </p>
-            <div class="tags"><span>AI</span><span>Simulation</span><span>Presentation</span><span>Teamwork</span></div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="builds" class="section-shell process-section">
-      <p class="section-kicker">HOW I BUILD</p>
-      <h2>Idea → Design → Build → Test → Debug → Improve</h2>
-      <div class="process-grid">
-        <div><strong>01</strong><span>Find a real problem</span></div>
-        <div><strong>02</strong><span>Research & sketch</span></div>
-        <div><strong>03</strong><span>Build a prototype</span></div>
-        <div><strong>04</strong><span>Test what fails</span></div>
-        <div><strong>05</strong><span>Debug & iterate</span></div>
-        <div><strong>06</strong><span>Document what changed</span></div>
-      </div>
-    </section>
-
-    <section id="journal" class="section-shell journal-section">
-      <div>
-        <p class="section-kicker">BUILD JOURNAL</p>
-        <h2>Learning in public.</h2>
-      </div>
-      <p class="prose">
-        Future updates will document experiments, design changes, code notes, failed attempts,
-        competition reflections, and lessons from each new version of a project.
-      </p>
-    </section>
-  </main>
-
-  <footer>
-    <div class="section-shell footer-inner">
-      <div>
-        <strong>George Xiang Li</strong>
-        <p>Student Maker · AI · Robotics · Engineering</p>
-      </div>
-      <p>Built as a living record of projects, process, and growth.</p>
     </div>
-  </footer>
 
-  <script src="script.js"></script>
-</body>
-</html>
+    <aside class="hero-card" aria-label="Current focus">
+      <p class="micro-label">CURRENT FOCUS</p>
+      <h2>{{ site.data.site.tagline }}</h2>
+      <p>{{ site.data.site.focus_intro }}</p>
+      <div class="focus-list">
+        {% for tag in site.data.site.focus_tags %}<span>{{ tag }}</span>{% endfor %}
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section id="projects" class="section-shell projects-section">
+  <div class="section-heading-row">
+    <div>
+      <p class="section-kicker">{{ site.data.site.projects_kicker }}</p>
+      <h2>{{ site.data.site.projects_heading }}</h2>
+    </div>
+    <p class="section-note">{{ site.data.site.projects_note }}</p>
+  </div>
+
+  <div class="project-grid">
+    {% assign ordered_projects = site.projects | where: "published", true | where: "featured", true | sort: "order" %}
+    {% for project in ordered_projects %}
+      <article class="project-card{% if forloop.first %} featured{% endif %}">
+        {% if project.cover %}
+          <a href="{{ project.url | relative_url }}" class="project-cover-link" aria-label="Open {{ project.title }}">
+            <img class="project-cover" src="{{ project.cover | relative_url }}" alt="{{ project.title }}" />
+          </a>
+        {% endif %}
+        <div class="project-topline">
+          <span class="project-index">{% if project.order < 10 %}0{% endif %}{{ project.order }}</span>
+          <span class="status-chip{% if project.status_style == 'neutral' %} neutral{% endif %}">{{ project.status }}</span>
+        </div>
+        <div class="project-card-body">
+          <p class="project-type">{{ project.project_type }}</p>
+          <h3>{{ project.title }}</h3>
+          <p>{{ project.summary }}</p>
+          <div class="tags">{% for tag in project.tags %}<span>{{ tag }}</span>{% endfor %}</div>
+          <a class="text-link" href="{{ project.url | relative_url }}">Open project <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="process" class="section-shell process-section">
+  <div class="section-heading-row compact">
+    <div>
+      <p class="section-kicker">{{ site.data.site.process_kicker }}</p>
+      <h2>{{ site.data.site.process_heading }}</h2>
+    </div>
+  </div>
+  <div class="process-grid">
+    {% for step in site.data.site.process_steps %}
+      <div><strong>{{ step.number }}</strong><span>{{ step.title }}</span><small>{{ step.text }}</small></div>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="about" class="section-shell about-section">
+  <div>
+    <p class="section-kicker">{{ site.data.site.about_kicker }}</p>
+    <h2>{{ site.data.site.about_heading }}</h2>
+  </div>
+  <div class="prose">{{ site.data.site.about_body | markdownify }}</div>
+</section>
+
+<section class="section-shell archive-note" aria-label="Archive note">
+  <div class="archive-rule"></div>
+  <div class="archive-content">
+    <p class="micro-label">{{ site.data.site.archive_kicker }}</p>
+    <p>{{ site.data.site.archive_note }}</p>
+  </div>
+</section>

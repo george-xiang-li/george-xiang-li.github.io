@@ -1,0 +1,230 @@
+media:
+  - name: images
+    label: Images
+    input: assets/images
+    output: /assets/images
+    extensions: [jpg, jpeg, png, webp, gif, svg]
+    categories: [image]
+    rename: safe
+
+settings:
+  commit:
+    identity: user
+    templates:
+      create: "Content: add {path}"
+      update: "Content: update {path}"
+      delete: "Content: remove {path}"
+      rename: "Content: rename {oldPath} -> {newPath}"
+
+content:
+  - name: site
+    label: Website Home
+    type: file
+    path: _data/site.yml
+    format: yaml
+    operations:
+      delete: false
+    fields:
+      - name: name
+        label: Name
+        type: string
+        required: true
+      - name: role
+        label: Short Role Line
+        type: string
+        required: true
+      - name: logo
+        label: Logo
+        type: image
+        options:
+          media: images
+      - name: hero_heading
+        label: Main Headline
+        type: text
+        required: true
+      - name: hero_copy
+        label: Intro Text
+        type: text
+        required: true
+      - name: tagline
+        label: Tagline
+        type: string
+      - name: focus_intro
+        label: Focus Description
+        type: text
+      - name: focus_tags
+        label: Focus Tags
+        type: string
+        list: true
+      - name: projects_kicker
+        label: Projects Small Heading
+        type: string
+      - name: projects_heading
+        label: Projects Heading
+        type: text
+      - name: projects_note
+        label: Projects Side Note
+        type: string
+      - name: process_kicker
+        label: Process Small Heading
+        type: string
+      - name: process_heading
+        label: Process Heading
+        type: text
+      - name: process_steps
+        label: Build Process Steps
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{number} · {title}"
+        fields:
+          - name: number
+            label: Number
+            type: string
+          - name: title
+            label: Step Title
+            type: string
+          - name: text
+            label: Description
+            type: text
+      - name: about_kicker
+        label: About Small Heading
+        type: string
+      - name: about_heading
+        label: About Heading
+        type: text
+      - name: about_body
+        label: About Text
+        type: rich-text
+        options:
+          format: markdown
+          media: false
+      - name: archive_kicker
+        label: Archive Small Heading
+        type: string
+      - name: archive_note
+        label: Archive Note
+        type: text
+      - name: footer_line
+        label: Footer Line
+        type: string
+      - name: footer_note
+        label: Footer Note
+        type: string
+
+  - name: projects
+    label: Projects
+    type: collection
+    path: _projects
+    format: yaml-frontmatter
+    filename:
+      template: "{primary}.md"
+      field: create
+    operations:
+      create: true
+      rename: false
+      delete: false
+    view:
+      fields: [title, year, status, featured, order]
+      primary: title
+      sort: [order, year, title]
+      search: [title, project_type, summary, tags]
+      default:
+        sort: order
+        order: asc
+    fields:
+      - name: title
+        label: Project Title
+        type: string
+        required: true
+      - name: order
+        label: Display Order
+        type: number
+        required: true
+      - name: featured
+        label: Show on Homepage
+        type: boolean
+      - name: published
+        label: Published
+        type: boolean
+      - name: year
+        label: Year / Date
+        type: string
+      - name: status
+        label: Status
+        type: string
+      - name: status_style
+        label: Status Style
+        type: select
+        options:
+          values:
+            - name: standard
+              label: Green
+            - name: neutral
+              label: Gray
+      - name: project_type
+        label: Category Line
+        type: string
+      - name: summary
+        label: Short Summary
+        type: text
+        required: true
+      - name: cover
+        label: Cover Image
+        type: image
+        options:
+          media: images
+      - name: tags
+        label: Skills / Tags
+        type: string
+        list: true
+      - name: meta
+        label: Project Facts
+        description: Short facts shown near the top of the project page.
+        type: string
+        list: true
+      - name: gallery
+        label: Image Gallery
+        type: image
+        options:
+          media: images
+          multiple:
+            max: 12
+          unique: true
+          extensions: [jpg, jpeg, png, webp]
+          rename: safe
+      - name: flow_steps
+        label: System Flow
+        description: Optional. Good for showing how a device or system works.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        fields:
+          - name: label
+            label: Step
+            type: string
+          - name: text
+            label: Description
+            type: string
+      - name: sections
+        label: Project Story Sections
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{heading}"
+        fields:
+          - name: heading
+            label: Section Heading
+            type: string
+            required: true
+          - name: body
+            label: Section Text
+            type: rich-text
+            options:
+              format: markdown
+              media: images
+              rename: safe

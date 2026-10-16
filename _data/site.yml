@@ -1,0 +1,46 @@
+name: George Xiang Li
+role: Student Maker · Builder · Problem Solver
+logo: /assets/images/gxl-logo.jpg
+hero_heading: I build things to understand how they work — and how they can work better.
+hero_copy: I explore AI, robotics, and engineering through real problems, prototypes, testing, debugging, and iteration.
+tagline: Technology Improves Life.
+focus_intro: A long-term record of projects that connect technology with useful, everyday problems.
+focus_tags:
+  - AI
+  - Robotics
+  - Engineering
+  - Human-Centered Design
+projects_kicker: Selected Work
+projects_heading: Projects with a trail of thinking behind them.
+projects_note: Growing archive · 2024—present
+process_kicker: Build Process
+process_heading: The process matters as much as the result.
+process_steps:
+  - number: "01"
+    title: Notice a real problem
+    text: Start with something worth improving.
+  - number: "02"
+    title: Research & sketch
+    text: Understand constraints before building.
+  - number: "03"
+    title: Prototype
+    text: Turn an idea into something testable.
+  - number: "04"
+    title: Test what fails
+    text: Look for weak points, not just successes.
+  - number: "05"
+    title: Debug & iterate
+    text: Change the design based on evidence.
+  - number: "06"
+    title: Document
+    text: Keep the reasoning, versions, and lessons.
+about_kicker: About
+about_heading: A growing engineering notebook, not a finished résumé.
+about_body: |
+  This website is a living record of George's projects and technical growth. It focuses on what was actually built, tested, changed, and learned — including incomplete ideas and failed attempts.
+
+  The goal is simple: build useful things, explain the thinking clearly, and get better with every version.
+archive_kicker: Archive Principle
+archive_note: Project pages will be updated as original sketches, code, build photos, testing notes, and version history are organized. No placeholder achievements or invented project claims are added.
+footer_line: Projects · Process · Growth
+footer_note: Built as a living record of learning.

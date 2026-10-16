@@ -1,0 +1,47 @@
+---
+layout: default
+---
+<article class="project-page section-shell">
+  <a class="back-link" href="{{ '/#projects' | relative_url }}">← Back to projects</a>
+  <header class="project-hero">
+    <p class="project-type">{{ page.project_type }}</p>
+    <h1>{{ page.title }}</h1>
+    <p class="project-summary">{{ page.summary }}</p>
+    <div class="project-meta">
+      {% if page.year %}<span>{{ page.year }}</span>{% endif %}
+      {% for item in page.meta %}<span>{{ item }}</span>{% endfor %}
+      {% for tag in page.tags %}<span>{{ tag }}</span>{% endfor %}
+    </div>
+  </header>
+
+  {% if page.cover %}
+    <figure class="project-hero-image">
+      <img src="{{ page.cover | relative_url }}" alt="{{ page.title }}" />
+    </figure>
+  {% endif %}
+
+  {% if page.flow_steps and page.flow_steps.size > 0 %}
+  <section class="system-flow" aria-label="System flow">
+    {% for step in page.flow_steps %}
+      <div class="flow-step"><strong>{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</strong><span>{{ step.label }}</span><small>{{ step.text }}</small></div>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if page.gallery and page.gallery.size > 0 %}
+  <section class="project-gallery" aria-label="Project gallery">
+    {% for image in page.gallery %}
+      <figure><img src="{{ image | relative_url }}" alt="{{ page.title }} project image {{ forloop.index }}" /></figure>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  <section class="project-details">
+    {% for section in page.sections %}
+      <div class="detail-card{% if section.body.size > 650 %} wide{% endif %}">
+        <h2>{{ section.heading }}</h2>
+        <div class="detail-body">{{ section.body | markdownify }}</div>
+      </div>
+    {% endfor %}
+  </section>
+</article>

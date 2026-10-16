@@ -1,0 +1,20 @@
+title: George Xiang Li
+description: Student maker documenting projects in AI, robotics, engineering, and real-world problem solving.
+url: "https://george-xiang-li.github.io"
+baseurl: ""
+markdown: kramdown
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+      published: true
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
